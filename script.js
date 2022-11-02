@@ -1,8 +1,8 @@
 <script> // i love es6
      let redirect_Page = () => {
-     let tID = setTimeout(function () {
+     let timahIDohyeah = setTimeout(function () {
                window.location.href = "./home";
-               window.clearTimeout(tID); // clear timeout :>
+               window.clearTimeout(timahIDohyeah); // clear timeout :>
           }, 5000);
      }
 </script>
