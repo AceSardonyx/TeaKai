@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>KaiokaCore - Loading...</title>
-  <link rel="stylesheet" href="./style.css">
+	<meta charset="UTF-8">
+	<title>KaiokaCore - Loading...</title>
+	<link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
 
-<script  src="./script.js"></script>
+
+<script> // i love es6 - backup: src="./script.js">
+     let redirect_Page = () => {
+     let timahIDohyeah = setTimeout(function () {
+               window.location.href = "./home";
+               window.clearTimeout(timahIDohyeah); // clear timeout :>
+          }, 5000);
+     }
+</script>
 
 <div class="eye"></div>
 
