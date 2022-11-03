@@ -4,20 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>KaiokaCore - Loading...</title>
-	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./sys/h/style.css">
 
 </head>
 <body>
-
-
-<script> // i love es6 - backup: src="./script.js">
-     let redirect_Page = () => {
-     let tID = setTimeout(function () {
-               window.location.href = "https://teakai.xyz/home/";
-               window.clearTimeout(tID); // clear timeout :>
-          }, 5000);
-     }
-</script>
 
 <div class="eye"></div>
 
@@ -58,6 +48,8 @@
 		</clipPath>
 	</defs>
 </svg>
+
+<script> setTimeout(function(){ window.location.href = './home/'; }, 5000); </script>
 
 </body>
 </html>
