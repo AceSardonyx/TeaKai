@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<!-- Meta Data & Stuff! -->
+<html lang="en-US" class="js one-page-layout no-applicationcache geolocation history postmessage svg websockets localstorage sessionstorage websqldatabase webworkers hashchange audio canvas canvastext video webgl cssgradients multiplebgs opacity rgba inlinesvg hsla supports svgclippaths smil no-touchevents fontface generatedcontent textshadow indexeddb indexeddb-deletedatabase no-forcetouch cssanimations backgroundsize borderimage borderradius boxshadow csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox cssreflections csstransforms no-csstransforms3d csstransitions ss-shaded-scrollbars" data-fbscriptallow="true" style="transition: background-color 0.15s ease 0s;"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.dismissButton{background-color:#fff;border:1px solid #dadce0;color:#1a73e8;border-radius:4px;font-family:Roboto,sans-serif;font-size:14px;height:36px;cursor:pointer;padding:0 24px}.dismissButton:hover{background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:focus{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:focus:not(:focus-visible){background-color:#fff;border:1px solid #dadce0;outline:none}.dismissButton:focus-visible{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:hover:focus{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:hover:focus:not(:focus-visible){background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:hover:focus-visible{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:active{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15)}.dismissButton:disabled{background-color:#fff;border:1px solid #f1f3f4;color:#3c4043}
+</style><style>.dismissButton{background-color:#fff;border:1px solid #dadce0;color:#1a73e8;border-radius:4px;font-family:Roboto,sans-serif;font-size:14px;height:36px;cursor:pointer;padding:0 24px}.dismissButton:hover{background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:focus{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:focus:not(:focus-visible){background-color:#fff;border:1px solid #dadce0;outline:none}.dismissButton:focus-visible{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:hover:focus{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:hover:focus:not(:focus-visible){background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:hover:focus-visible{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:active{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15)}.dismissButton:disabled{background-color:#fff;border:1px solid #f1f3f4;color:#3c4043}
+</style><style>.dismissButton{background-color:#fff;border:1px solid #dadce0;color:#1a73e8;border-radius:4px;font-family:Roboto,sans-serif;font-size:14px;height:36px;cursor:pointer;padding:0 24px}.dismissButton:hover{background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:focus{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:focus:not(:focus-visible){background-color:#fff;border:1px solid #dadce0;outline:none}.dismissButton:focus-visible{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:hover:focus{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:hover:focus:not(:focus-visible){background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:hover:focus-visible{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:active{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15)}.dismissButton:disabled{background-color:#fff;border:1px solid #f1f3f4;color:#3c4043}
+</style><style>.dismissButton{background-color:#fff;border:1px solid #dadce0;color:#1a73e8;border-radius:4px;font-family:Roboto,sans-serif;font-size:14px;height:36px;cursor:pointer;padding:0 24px}.dismissButton:hover{background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:focus{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:focus:not(:focus-visible){background-color:#fff;border:1px solid #dadce0;outline:none}.dismissButton:focus-visible{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:hover:focus{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:hover:focus:not(:focus-visible){background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:hover:focus-visible{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:active{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15)}.dismissButton:disabled{background-color:#fff;border:1px solid #f1f3f4;color:#3c4043}
+</style><style>.dismissButton{background-color:#fff;border:1px solid #dadce0;color:#1a73e8;border-radius:4px;font-family:Roboto,sans-serif;font-size:14px;height:36px;cursor:pointer;padding:0 24px}.dismissButton:hover{background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:focus{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:focus:not(:focus-visible){background-color:#fff;border:1px solid #dadce0;outline:none}.dismissButton:focus-visible{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:hover:focus{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:hover:focus:not(:focus-visible){background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:hover:focus-visible{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:active{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15)}.dismissButton:disabled{background-color:#fff;border:1px solid #f1f3f4;color:#3c4043}
+</style><style>.gm-control-active>img{box-sizing:content-box;display:none;left:50%;pointer-events:none;position:absolute;top:50%;transform:translate(-50%,-50%)}.gm-control-active>img:nth-child(1){display:block}.gm-control-active:focus>img:nth-child(1),.gm-control-active:hover>img:nth-child(1),.gm-control-active:active>img:nth-child(1),.gm-control-active:disabled>img:nth-child(1){display:none}.gm-control-active:focus>img:nth-child(2),.gm-control-active:hover>img:nth-child(2){display:block}.gm-control-active:active>img:nth-child(3){display:block}.gm-control-active:disabled>img:nth-child(4){display:block}
+</style><link type="text/css" rel="stylesheet" href="./index_files/css"><link type="text/css" rel="stylesheet" href="./index_files/css(1)"><style>.gm-ui-hover-effect{opacity:.6}.gm-ui-hover-effect:hover{opacity:1}.gm-ui-hover-effect>span{background-color:#000}@media (forced-colors:active),(prefers-contrast:more){.gm-ui-hover-effect>span{background-color:ButtonText}}
+</style><style>.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}.gm-style .gm-style-cc a,.gm-style .gm-style-cc button,.gm-style .gm-style-cc span{outline-offset:3px}
+</style><style>@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style>.dismissButton{background-color:#fff;border:1px solid #dadce0;color:#1a73e8;border-radius:4px;font-family:Roboto,sans-serif;font-size:14px;height:36px;cursor:pointer;padding:0 24px}.dismissButton:hover{background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:focus{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:focus:not(:focus-visible){background-color:#fff;border:1px solid #dadce0;outline:none}.dismissButton:focus-visible{background-color:rgba(66,133,244,.12);border:1px solid #d2e3fc;outline:0}.dismissButton:hover:focus{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:hover:focus:not(:focus-visible){background-color:rgba(66,133,244,.04);border:1px solid #d2e3fc}.dismissButton:hover:focus-visible{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd}.dismissButton:active{background-color:rgba(66,133,244,.16);border:1px solid #d2e2fd;box-shadow:0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15)}.dismissButton:disabled{background-color:#fff;border:1px solid #f1f3f4;color:#3c4043}
+</style><style>.gm-style-moc{background-color:rgba(0,0,0,.45);pointer-events:none;text-align:center;transition:opacity ease-in-out}.gm-style-mot{color:white;font-family:Roboto,Arial,sans-serif;font-size:22px;margin:0;position:relative;top:50%;transform:translateY(-50%);-webkit-transform:translateY(-50%);-ms-transform:translateY(-50%)}
+</style><style>.gm-style img{max-width: none;}.gm-style {font: 400 11px Roboto, Arial, sans-serif; text-decoration: none;}</style>
+	
+	<head>
+		<title>Kai ✩ About Me</title>
+		<meta name="author" content="Kai">
+		<meta name="description" content="~Kai - About Me~">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta http-equiv="X-UA-Compatibility" content="IE=Edge">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta property="og:title" content="Kai ✩ (AceSardonyx)">
+		<meta property="og:site_name" content="Made By ✩ Kai (AceSardonyx)">
+		<meta property="og:url" content="https://acesardonyx.xyz">
+		<meta property="og:description" content="This page gives a more detailed description about myself!">
+		<meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/1220/1220737.png">
+		<meta name="msapplication-TileColor" content="#717895">
+		<meta name="theme-color" content="#717895">
+		<meta name="robots" content="max-image-preview:large">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<noscript><link rel="stylesheet" href="/about/assets/css/noscript.css" /></noscript>
+		<script src="https://kit.fontawesome.com/d0a1b3c7c8.js" crossorigin="anonymous"></script>
+	</head>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/themes.pixelwars.org\/ucard\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.7"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./assets/emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="./index_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ucard-shortcodes-css" href="./index_files/shortcodes.css" type="text/css" media="all">
+<link rel="stylesheet" id="mc4wp-form-basic-css" href="./index_files/form-basic.css" type="text/css" media="all">
+<link rel="stylesheet" id="ucard-fonts-css" href="./index_files/css(2)" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./index_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="pe-icon-7-stroke-css" href="./index_files/pe-icon-7-stroke.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontello-css" href="./index_files/fontello.css" type="text/css" media="all">
+<link rel="stylesheet" id="nprogress-css" href="./index_files/nprogress.css" type="text/css" media="all">
+<link rel="stylesheet" id="magnific-popup-css" href="./index_files/magnific-popup.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ucard-align-css" href="./index_files/align.css" type="text/css" media="all">
+<link rel="stylesheet" id="ucard-layout-css" href="./index_files/layout.css" type="text/css" media="all">
+<link rel="stylesheet" id="ucard-main-css" href="./index_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="ucard-768-css" href="./index_files/768.css" type="text/css" media="all">
+<link rel="stylesheet" id="ucard-style-css" href="./index_files/style.css" type="text/css" media="all">
+<style id="ucard-style-inline-css" type="text/css">
+.cd-item:nth-of-type(1) a:before { background-color: #000511; }.cd-item:nth-of-type(3) a:before { background-color: #1a4039; }p:empty { display: none; }
+.service p:first-child, .process > p, .fun-fact > p  { margin: 0; }
+</style>
+<script type="text/javascript" src="./index_files/jquery.min.js.download" id="jquery-core-js"></script><script>(function(){class RuffleMimeType{constructor(a,b,c){this.type=a,this.description=b,this.suffixes=c}}class RuffleMimeTypeArray{constructor(a){this.__mimetypes=[],this.__named_mimetypes={};for(let b of a)this.install(b)}install(a){let b=this.__mimetypes.length;this.__mimetypes.push(a),this.__named_mimetypes[a.type]=a,this[a.type]=a,this[b]=a}item(a){return this.__mimetypes[a]}namedItem(a){return this.__named_mimetypes[a]}get length(){return this.__mimetypes.length}}class RufflePlugin extends RuffleMimeTypeArray{constructor(a,b,c,d){super(d),this.name=a,this.description=b,this.filename=c}install(a){a.enabledPlugin||(a.enabledPlugin=this),super.install(a)}}class RufflePluginArray{constructor(a){this.__plugins=[],this.__named_plugins={};for(let b of a)this.install(b)}install(a){let b=this.__plugins.length;this.__plugins.push(a),this.__named_plugins[a.name]=a,this[a.name]=a,this[b]=a}item(a){return this.__plugins[a]}namedItem(a){return this.__named_plugins[a]}refresh(){}get length(){return this.__plugins.length}}const FLASH_PLUGIN=new RufflePlugin("Shockwave Flash","Shockwave Flash 32.0 r0","ruffle.js",[new RuffleMimeType("application/futuresplash","Shockwave Flash","spl"),new RuffleMimeType("application/x-shockwave-flash","Shockwave Flash","swf"),new RuffleMimeType("application/x-shockwave-flash2-preview","Shockwave Flash","swf"),new RuffleMimeType("application/vnd.adobe.flash.movie","Shockwave Flash","swf")]);function install_plugin(a){navigator.plugins.install||Object.defineProperty(navigator,"plugins",{value:new RufflePluginArray(navigator.plugins),writable:!1}),navigator.plugins.install(a),0<a.length&&!navigator.mimeTypes.install&&Object.defineProperty(navigator,"mimeTypes",{value:new RuffleMimeTypeArray(navigator.mimeTypes),writable:!1});for(var b=0;b<a.length;b+=1)navigator.mimeTypes.install(a[b])}install_plugin(FLASH_PLUGIN);})();</script><script src="chrome-extension://donbcfbmhbcapadipfkeojnmajbakjdc/dist/ruffle.js?id=5275547681"></script>
+<script type="text/javascript" src="./index_files/jquery-migrate.min.js.download" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="./index_files/modernizr.min.js.download" id="modernizr-js"></script>
+<link rel="https://api.w.org/" href="https://themes.pixelwars.org/ucard/wp-json/"><link rel="alternate" type="application/json" href="https://themes.pixelwars.org/ucard/wp-json/wp/v2/pages/185"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://themes.pixelwars.org/ucard/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://themes.pixelwars.org/ucard/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="Teakuu LLC">
+<link rel="canonical" href="https://themes.pixelwars.org/ucard/">
+<link rel="shortlink" href="https://themes.pixelwars.org/ucard/">
+<link rel="alternate" type="application/json+oembed" href="https://themes.pixelwars.org/ucard/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthemes.pixelwars.org%2Fucard%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://themes.pixelwars.org/ucard/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthemes.pixelwars.org%2Fucard%2F&amp;format=xml">
+<script type="text/javascript" charset="UTF-8" src="./index_files/common.js.download"></script><script type="text/javascript" charset="UTF-8" src="./index_files/util.js.download"></script><script type="text/javascript" charset="UTF-8" src="./index_files/map.js.download"></script><script type="text/javascript" charset="UTF-8" src="./index_files/marker.js.download"></script><meta name="shimejiBrowserExtensionId" content="gohjpllcolmccldfdggmamodembldgpc" data-version="1.6.5"><style type="text/css">
+@charset "UTF-8";
+/*!
+ * jQuery contextMenu - Plugin for simple contextMenu handling
+ *
+ * Version: v2.5.0
+ *
+ * Authors: Björn Brala (SWIS.nl), Rodney Rehm, Addy Osmani (patches for FF)
+ * Web: http://swisnl.github.io/jQuery-contextMenu/
+ *
+ * Copyright (c) 2011-2017 SWIS BV and contributors
+ *
+ * Licensed under
+ *   MIT License http://www.opensource.org/licenses/mit-license
+ *
+ * Date: 2017-05-25T11:30:28.663Z
+ */
+@-webkit-keyframes cm-spin {
+  0% {
+    -webkit-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) rotate(359deg);
+            transform: translateY(-50%) rotate(359deg);
+  }
+}
+@-o-keyframes cm-spin {
+  0% {
+    -webkit-transform: translateY(-50%) rotate(0deg);
+         -o-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) rotate(359deg);
+         -o-transform: translateY(-50%) rotate(359deg);
+            transform: translateY(-50%) rotate(359deg);
+  }
+}
+@keyframes cm-spin {
+  0% {
+    -webkit-transform: translateY(-50%) rotate(0deg);
+         -o-transform: translateY(-50%) rotate(0deg);
+            transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translateY(-50%) rotate(359deg);
+         -o-transform: translateY(-50%) rotate(359deg);
+            transform: translateY(-50%) rotate(359deg);
+  }
+}
+
+@font-face {
+  font-family: "context-menu-icons";
+  font-style: normal;
+  font-weight: normal;
+
+  src: url("font/context-menu-icons.eot?4yg1f");
+  src: url("font/context-menu-icons.eot?4yg1f#iefix") format("embedded-opentype"), url("font/context-menu-icons.woff2?4yg1f") format("woff2"), url("font/context-menu-icons.woff?4yg1f") format("woff"), url("font/context-menu-icons.ttf?4yg1f") format("truetype");
+}
+
+.context-menu-icon-add:before {
+  content: "EA01";
+}
+
+.context-menu-icon-copy:before {
+  content: "EA02";
+}
+
+.context-menu-icon-cut:before {
+  content: "EA03";
+}
+
+.context-menu-icon-delete:before {
+  content: "EA04";
+}
+
+.context-menu-icon-edit:before {
+  content: "EA05";
+}
+
+.context-menu-icon-loading:before {
+  content: "EA06";
+}
+
+.context-menu-icon-paste:before {
+  content: "EA07";
+}
+
+.context-menu-icon-quit:before {
+  content: "EA08";
+}
+
+.context-menu-icon::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2em;
+  font-family: "context-menu-icons";
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  color: #2980b9;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.context-menu-icon.context-menu-hover:before {
+  color: #fff;
+}
+
+.context-menu-icon.context-menu-disabled::before {
+  color: #bbb;
+}
+
+.context-menu-icon.context-menu-icon-loading:before {
+  -webkit-animation: cm-spin 2s infinite;
+       -o-animation: cm-spin 2s infinite;
+          animation: cm-spin 2s infinite;
+}
+
+.context-menu-icon.context-menu-icon--fa {
+  display: list-item;
+  font-family: inherit;
+}
+.context-menu-icon.context-menu-icon--fa::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2em;
+  font-family: FontAwesome;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  color: #2980b9;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.context-menu-icon.context-menu-icon--fa.context-menu-hover:before {
+  color: #fff;
+}
+.context-menu-icon.context-menu-icon--fa.context-menu-disabled::before {
+  color: #bbb;
+}
+
+.context-menu-list {
+  position: absolute;
+  display: inline-block;
+  min-width: 13em;
+  max-width: 26em;
+  padding: .25em 0;
+  margin: .3em;
+  font-family: inherit;
+  font-size: inherit;
+  list-style-type: none;
+  background: #fff;
+  border: 1px solid #bebebe;
+  border-radius: .2em;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+.context-menu-item {
+  position: relative;
+  padding: .2em 2em;
+  color: #2f2f2f;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #fff;
+}
+
+.context-menu-separator {
+  padding: 0;
+  margin: .35em 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.context-menu-item > label > input,
+.context-menu-item > label > textarea {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+}
+
+.context-menu-item.context-menu-hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: #2980b9;
+}
+
+.context-menu-item.context-menu-disabled {
+  color: #bbb;
+  cursor: default;
+  background-color: #fff;
+}
+
+.context-menu-input.context-menu-hover {
+  color: #2f2f2f;
+  cursor: default;
+}
+
+.context-menu-submenu:after {
+  position: absolute;
+  top: 50%;
+  right: .5em;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  content: '';
+  border-color: transparent transparent transparent #2f2f2f;
+  border-style: solid;
+  border-width: .25em 0 .25em .25em;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/**
+ * Inputs
+ */
+.context-menu-item.context-menu-input {
+  padding: .3em .6em;
+}
+
+/* vertically align inside labels */
+.context-menu-input > label > * {
+  vertical-align: top;
+}
+
+/* position checkboxes and radios as icons */
+.context-menu-input > label > input[type="checkbox"],
+.context-menu-input > label > input[type="radio"] {
+  position: relative;
+  top: .12em;
+  margin-right: .4em;
+}
+
+.context-menu-input > label {
+  margin: 0;
+}
+
+.context-menu-input > label,
+.context-menu-input > label > input[type="text"],
+.context-menu-input > label > textarea,
+.context-menu-input > label > select {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.context-menu-input > label > textarea {
+  height: 7em;
+}
+
+.context-menu-item > .context-menu-list {
+  top: .3em;
+  /* re-positioned by js */
+  right: -.3em;
+  display: none;
+}
+
+.context-menu-item.context-menu-visible > .context-menu-list {
+  display: block;
+}
+
+.context-menu-accesskey {
+  text-decoration: underline;
+}
+</style><style type="text/css">
+<!DOCTYPE html>
+<html style="height:100%">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<title> 404 Not Found
+</title></head>
+<body style="color: #444; margin:0;font: normal 14px/20px Arial, Helvetica, sans-serif; height:100%; background-color: #fff;">
+<div style="height:auto; min-height:100%; ">     <div style="text-align: center; width:800px; margin-left: -400px; position:absolute; top: 30%; left:50%;">
+        <h1 style="margin:0; font-size:150px; line-height:150px; font-weight:bold;">404</h1>
+<h2 style="margin-top:20px;font-size: 30px;">Not Found
+</h2>
+<p>The resource requested could not be found on this server!</p>
+</div></div><div style="color:#f0f0f0; font-size:12px;margin:auto;padding:0px 30px 0px 30px;position:relative;clear:both;height:100px;margin-top:-101px;background-color:#474747;border-top: 1px solid rgba(0,0,0,0.15);box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;">
+<br>Proudly powered by  <a style="color:#fff;" href="http://www.litespeedtech.com/error-page">LiteSpeed Web Server</a><p>Please be advised that LiteSpeed Technologies Inc. is not a web hosting company and, as such, has no control over content found on this site.</p></div></body></html>
+('https://fonts.googleapis.com/css?family=Lato');
+
+.context-menu-list {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 14px;
+  text-align: left;
+  font-weight: normal;
+  width: 200px;
+}
+.context-menu-item {
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: left;
+}
+.contextmenu-item-custom.contextmenu-item-custom__accent:not(:hover) {
+  background-color: #f8ffeb;
+}
+.contextmenu-item-custom.contextmenu-item-custom__success:not(:hover) {
+  background-color: #eeffcd;
+}
+</style><style type="text/css">#_copy{align-items:center;background:#4494d5;border-radius:3px;color:#fff;cursor:pointer;display:flex;font-size:13px;height:30px;justify-content:center;position:absolute;width:60px;z-index:1000}#select-tooltip,#sfModal,.modal-backdrop,div[id^=reader-helper]{display:none!important}.modal-open{overflow:auto!important}._sf_adjust_body{padding-right:0!important}.super_copy_btns_div{position:fixed;width:154px;left:10px;top:45%;background:#e7f1ff;border:2px solid #4595d5;font-weight:600;border-radius:2px;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;z-index:5000}.super_copy_btns_logo{width:100%;background:#4595d5;text-align:center;font-size:12px;color:#e7f1ff;line-height:30px;height:30px}.super_copy_btns_btn{display:block;width:128px;height:28px;background:#7f5711;border-radius:4px;color:#fff;font-size:12px;border:0;outline:0;margin:8px auto;font-weight:700;cursor:pointer;opacity:.9}.super_copy_btns_btn:hover{opacity:.8}.super_copy_btns_btn:active{opacity:1}</style><script type="text/javascript" charset="UTF-8" src="./index_files/controls.js.download"></script><script type="text/javascript" charset="UTF-8" src="./index_files/stats.js.download"></script><script type="text/javascript" charset="UTF-8" src="./index_files/onion.js.download"></script><meta name="generator" value="Saved inlined page from https://themes.pixelwars.org/ucard/ on Tue Sep 13 2022 19:56:56 GMT-0400 (Eastern Daylight Time)"><!--<base href="https://themes.pixelwars.org/ucard/">--><base href="."></head>
+
+<body data-rsssl="1" class="home page-template page-template-page_template-home page-template-page_template-home-php page page-id-185" _c_t_common="1" _c_t_j1="1">
+	<div id="page" class="hfeed site">
+		<main id="main" class="site-main cd-main">
+						<header id="masthead" class="header" role="banner" style="background-image: url(&quot;https://themes.pixelwars.org/ucard/wp-content/uploads/2016/11/home-1920x1282.jpg&quot;);" data-large-image="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/11/home-1920x1282.jpg">
+				<div class="header-wrap layout-full">
+													<img alt="Kai" src="./assets/img/intentional404link">
+													
+														<h1 class="site-title">
+										<span class="site-title-text">
+											I'm Kai! (Kaiden)								</span> <!-- .site-title-text -->
+									</h1> <!-- .site-title -->
+													
+													<p class="site-description">
+																	I am <strong id="typist-element" data-typist="helpful.,kind.,a hard worker.">determined.</strong> 											</p> <!-- .site-description -->
+												
+													<div class="header-bottom">
+													<a class="social-link facebook" href="https://themes.pixelwars.org/ucard/#"></a>
+							<a class="social-link twitter" href="https://themes.pixelwars.org/ucard/#"></a>
+							<a class="social-link linkedin" target="_blank" href="https://themes.pixelwars.org/ucard/#"></a>
+							<a class="social-link instagram" target="_blank" href="https://themes.pixelwars.org/ucard/#"></a>
+											</div> <!-- .header-bottom -->
+												
+					<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+						                        
+												<div class="nav-menu menu-with-icons">
+													</div> <!-- .nav-menu -->
+					</nav> <!-- #primary-navigation .site-navigation .primary-navigation -->
+					
+					<div class="header-search">
+						<form id="search-form" role="search" method="get" action="https://themes.pixelwars.org/ucard/">
+							<input type="text" id="search" name="s" required="required" placeholder="type and hit enter">
+							<input type="submit" id="search-submit" title="Search" value="→">
+						</form> <!-- #search-form -->
+					</div> <!-- .header-search -->
+				</div> <!-- .header-wrap .layout-full -->
+				
+				<a class="mouse-scroll" href="https://themes.pixelwars.org/ucard/#"> 
+					<span class="mouse">
+						<span class="mouse-movement"> 
+						</span> <!-- .mouse-movement -->
+					</span> <!-- .mouse -->
+				</a> <!-- .mouse-scroll -->
+			</header> <!-- #masthead .header -->
+<div class="site-middle">
+	<div class="layout-plain">
+		<div id="primary" class="content-area">
+			<div id="content" class="site-content" role="main">
+											<ul class="cd-gallery">
+															<li class="cd-item" style="background-image: url(&quot;https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/about-2-1000x668.jpg&quot;);">
+								<img width="1000" height="668" src="./index_files/about-2-1000x668.jpg" class="attachment-ucard_image_size_1 size-ucard_image_size_1 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/about-2-1000x668.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/about-2.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/about-2-300x200.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/about-2-768x513.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/about-2-1024x684.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/about-2-550x367.jpg 550w" sizes="(max-width: 1000px) 100vw, 1000px">																<a data-slug="about-me" href="https://themes.pixelwars.org/ucard/#/about-me">
+									<div>
+																							<i class="pe-7s-user"></i>
+																																			<h2>about me</h2>
+																																			<p>Get to know about me and more.</p>
+																						<b>View More</b>
+									</div>
+								</a>
+							</li>
+													<li class="cd-item" style="background-image: url(&quot;https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/resume-2-1000x667.jpg&quot;);">
+								<img width="1000" height="667" src="./index_files/resume-2-1000x667.jpg" class="attachment-ucard_image_size_1 size-ucard_image_size_1 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/resume-2-1000x667.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/resume-2.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/resume-2-300x200.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/resume-2-768x512.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/resume-2-1024x683.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/resume-2-550x367.jpg 550w" sizes="(max-width: 1000px) 100vw, 1000px">																<a data-slug="resume" href="https://themes.pixelwars.org/ucard/#/resume">
+									<div>
+																							<i class="pe-7s-id"></i>
+																																			<h2>resume</h2>
+																																			<p>Learn more about my studies and works.</p>
+																						<b>View More</b>
+									</div>
+								</a>
+							</li>
+													<li class="cd-item" style="background-image: url(&quot;https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/portfolio-2-1000x667.jpg&quot;);">
+								<img width="1000" height="667" src="./index_files/portfolio-2-1000x667.jpg" class="attachment-ucard_image_size_1 size-ucard_image_size_1 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/portfolio-2-1000x667.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/portfolio-2.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/portfolio-2-300x200.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/portfolio-2-768x512.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/portfolio-2-1024x683.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2014/04/portfolio-2-550x367.jpg 550w" sizes="(max-width: 1000px) 100vw, 1000px">																<a id="portfolio-link" data-slug="portfolio" href="https://themes.pixelwars.org/ucard/#/portfolio">
+									<div>
+																							<i class="pe-7s-portfolio"></i>
+																																			<h2>portfolio</h2>
+																																			<p>Find out what i have done so far.</p>
+																						<b>View More</b>
+									</div>
+								</a>
+							</li>
+													<li class="cd-item" style="background-image: url(&quot;https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/blog-1-1000x667.jpg&quot;);">
+								<img width="1000" height="667" src="./index_files/blog-1-1000x667.jpg" class="attachment-ucard_image_size_1 size-ucard_image_size_1 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/blog-1-1000x667.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/blog-1-300x200.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/blog-1-768x512.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/blog-1-1024x683.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/blog-1-550x367.jpg 550w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/blog-1.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/blog-1-500x333.jpg 500w" sizes="(max-width: 1000px) 100vw, 1000px">																<a data-slug="latest-from-the-blog" href="https://themes.pixelwars.org/ucard/#/latest-from-the-blog">
+									<div>
+																							<i class="pe-7s-notebook"></i>
+																																			<h2>blog</h2>
+																																			<p>Sometimes i do write about stuff.</p>
+																						<b>View More</b>
+									</div>
+								</a>
+							</li>
+													</ul>
+										
+											<div class="page-bottom">
+								<div class="row">
+<div class=" col-md-6" style="height: 466.312px;">
+<div class="map">
+<p style="padding: 0px; margin: 0px;"><script type="text/javascript" src="./index_files/js"></script></p>
+<div id="map-canvas" class="map-canvas" data-latitude="29.720157" data-longitude="-95.4013379" data-zoom="4" data-marker-image="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/11/marker1.png" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"><div class="gm-style" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px;"><div><button draggable="false" aria-label="Keyboard shortcuts" title="Keyboard shortcuts" type="button" style="background: none transparent; display: block; border: none; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; z-index: 1000002; outline-offset: 3px; right: 0px; bottom: 0px; transform: translateX(100%);"></button></div><div tabindex="0" aria-label="Map" aria-roledescription="map" role="region" style="position: absolute; z-index: 0; left: 0px; top: 0px; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; cursor: url(&quot;https://maps.gstatic.com/mapfiles/openhand_8_8.cur&quot;), default; touch-action: pan-x pan-y;"><div style="z-index: 1; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;"><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 996; transform: matrix(1, 0, 0, 1, -92, -60);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div><div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px;"><div style="width: 256px; height: 256px;"></div></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;"><div style="width: 120px; height: 90px; overflow: hidden; position: absolute; left: -213px; top: 8px; z-index: 98;"><img alt="" src="./index_files/marker1.png" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 120px; height: 90px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none; opacity: 1;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: -1;"><div style="position: absolute; z-index: 996; transform: matrix(1, 0, 0, 1, -92, -60);"><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: -256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: 0px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -256px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: 256px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: 0px;"></div><div style="width: 256px; height: 256px; overflow: hidden; position: absolute; left: -512px; top: -256px;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 0;"><div style="position: absolute; z-index: 996; transform: matrix(1, 0, 0, 1, -92, -60);"><div style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(1)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(2)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(3)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(4)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(5)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(6)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: 0px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(7)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -256px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(8)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: 256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(9)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: 0px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(10)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div><div style="position: absolute; left: -512px; top: -256px; width: 256px; height: 256px; transition: opacity 200ms linear 0s;"><img draggable="false" alt="" role="presentation" src="./index_files/vt(11)" style="width: 256px; height: 256px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div></div></div><div style="z-index: 3; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; touch-action: pan-x pan-y;"><div style="z-index: 4; position: absolute; left: 50%; top: 50%; width: 100%; transform: translate(0px, 0px);"><div style="position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div><div style="position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"><span id="483DABF4-B67B-486A-9923-BB4D775CBBE6" style="display: none;">To navigate, press the arrow keys.</span><div title="Hey, I am here" aria-label="Hey, I am here" role="img" tabindex="-1" style="width: 120px; height: 90px; overflow: hidden; position: absolute; cursor: pointer; touch-action: none; left: -213px; top: 8px; z-index: 98;"><img alt="" src="./index_files/transparent.png" draggable="false" style="width: 120px; height: 90px; user-select: none; border: 0px; padding: 0px; margin: 0px; max-width: none;"></div></div><div style="position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div></div></div><div class="gm-style-moc" style="z-index: 4; position: absolute; height: 100%; width: 100%; padding: 0px; border-width: 0px; margin: 0px; left: 0px; top: 0px; opacity: 0; transition-duration: 0.8s;"><p class="gm-style-mot">Use ctrl + scroll to zoom the map</p></div></div><iframe aria-hidden="true" frameborder="0" tabindex="-1" style="z-index: -1; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; border: none;" data-ruffle-polyfilled="" src="./index_files/saved_resource.html"></iframe><div style="pointer-events: none; width: 100%; height: 100%; box-sizing: border-box; position: absolute; z-index: 1000002; opacity: 0; border: 2px solid rgb(26, 115, 232);"></div><div></div><div></div><div></div><div></div><div><button draggable="false" aria-label="Toggle fullscreen view" title="Toggle fullscreen view" type="button" aria-pressed="false" class="gm-control-active gm-fullscreen-control" style="background: none rgb(255, 255, 255); border: 0px; margin: 10px; padding: 0px; text-transform: none; appearance: none; position: absolute; cursor: pointer; user-select: none; border-radius: 2px; height: 40px; width: 40px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; overflow: hidden; display: none; top: 0px; right: 0px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E" alt="" style="height: 18px; width: 18px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E" alt="" style="height: 18px; width: 18px;"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2018%2018%22%3E%3Cpath%20fill%3D%22%23111%22%20d%3D%22M0%200v6h2V2h4V0H0zm16%200h-4v2h4v4h2V0h-2zm0%2016h-4v2h6v-6h-2v4zM2%2012H0v6h6v-2H2v-4z%22/%3E%3C/svg%3E" alt="" style="height: 18px; width: 18px;"></button></div><div></div><div></div><div></div><div></div><div></div><div><div style="margin: 0px 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;"><a target="_blank" rel="noopener" title="Open this area in Google Maps (opens a new window)" aria-label="Open this area in Google Maps (opens a new window)" href="https://maps.google.com/maps?ll=36.90918,-81.954072&amp;z=4&amp;t=m&amp;hl=en-US&amp;gl=US&amp;mapclient=apiv3" style="display: inline;"><div style="width: 66px; height: 26px;"><img alt="Google" src="data:image/svg+xml,%3Csvg%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2069%2029%22%3E%3Cg%20opacity%3D%22.3%22%20fill%3D%22%23000%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22M17.4706%207.33616L18.0118%206.79504%2017.4599%206.26493C16.0963%204.95519%2014.2582%203.94522%2011.7008%203.94522c-4.613699999999999%200-8.50262%203.7551699999999997-8.50262%208.395779999999998C3.19818%2016.9817%207.0871%2020.7368%2011.7008%2020.7368%2014.1712%2020.7368%2016.0773%2019.918%2017.574%2018.3689%2019.1435%2016.796%2019.5956%2014.6326%2019.5956%2012.957%2019.5956%2012.4338%2019.5516%2011.9316%2019.4661%2011.5041L19.3455%2010.9012H10.9508V14.4954H15.7809C15.6085%2015.092%2015.3488%2015.524%2015.0318%2015.8415%2014.403%2016.4629%2013.4495%2017.1509%2011.7008%2017.1509%209.04835%2017.1509%206.96482%2015.0197%206.96482%2012.341%206.96482%209.66239%209.04835%207.53119%2011.7008%207.53119%2013.137%207.53119%2014.176%208.09189%2014.9578%208.82348L15.4876%209.31922%2016.0006%208.80619%2017.4706%207.33616z%22/%3E%3Cpath%20d%3D%22M24.8656%2020.7286C27.9546%2020.7286%2030.4692%2018.3094%2030.4692%2015.0594%2030.4692%2011.7913%2027.953%209.39009%2024.8656%209.39009%2021.7783%209.39009%2019.2621%2011.7913%2019.2621%2015.0594c0%203.25%202.514499999999998%205.6692%205.6035%205.6692zM24.8656%2012.8282C25.8796%2012.8282%2026.8422%2013.6652%2026.8422%2015.0594%2026.8422%2016.4399%2025.8769%2017.2905%2024.8656%2017.2905%2023.8557%2017.2905%2022.8891%2016.4331%2022.8891%2015.0594%2022.8891%2013.672%2023.853%2012.8282%2024.8656%2012.8282z%22/%3E%3Cpath%20d%3D%22M35.7511%2017.2905v0H35.7469C34.737%2017.2905%2033.7703%2016.4331%2033.7703%2015.0594%2033.7703%2013.672%2034.7343%2012.8282%2035.7469%2012.8282%2036.7608%2012.8282%2037.7234%2013.6652%2037.7234%2015.0594%2037.7234%2016.4439%2036.7554%2017.2961%2035.7511%2017.2905zM35.7387%2020.7286C38.8277%2020.7286%2041.3422%2018.3094%2041.3422%2015.0594%2041.3422%2011.7913%2038.826%209.39009%2035.7387%209.39009%2032.6513%209.39009%2030.1351%2011.7913%2030.1351%2015.0594%2030.1351%2018.3102%2032.6587%2020.7286%2035.7387%2020.7286z%22/%3E%3Cpath%20d%3D%22M51.953%2010.4357V9.68573H48.3999V9.80826C47.8499%209.54648%2047.1977%209.38187%2046.4808%209.38187%2043.5971%209.38187%2041.0168%2011.8998%2041.0168%2015.0758%2041.0168%2017.2027%2042.1808%2019.0237%2043.8201%2019.9895L43.7543%2020.0168%2041.8737%2020.797%2041.1808%2021.0844%2041.4684%2021.7772C42.0912%2023.2776%2043.746%2025.1469%2046.5219%2025.1469%2047.9324%2025.1469%2049.3089%2024.7324%2050.3359%2023.7376%2051.3691%2022.7367%2051.953%2021.2411%2051.953%2019.2723v-8.8366zm-7.2194%209.9844L44.7334%2020.4196C45.2886%2020.6201%2045.878%2020.7286%2046.4808%2020.7286%2047.1616%2020.7286%2047.7866%2020.5819%2048.3218%2020.3395%2048.2342%2020.7286%2048.0801%2021.0105%2047.8966%2021.2077%2047.6154%2021.5099%2047.1764%2021.7088%2046.5219%2021.7088%2045.61%2021.7088%2045.0018%2021.0612%2044.7336%2020.4201zM46.6697%2012.8282C47.6419%2012.8282%2048.5477%2013.6765%2048.5477%2015.084%2048.5477%2016.4636%2047.6521%2017.2987%2046.6697%2017.2987%2045.6269%2017.2987%2044.6767%2016.4249%2044.6767%2015.084%2044.6767%2013.7086%2045.6362%2012.8282%2046.6697%2012.8282zM55.7387%205.22081v-.75H52.0788V20.4412H55.7387V5.22081z%22/%3E%3Cpath%20d%3D%22M63.9128%2016.0614L63.2945%2015.6492%2062.8766%2016.2637C62.4204%2016.9346%2061.8664%2017.3069%2061.0741%2017.3069%2060.6435%2017.3069%2060.3146%2017.2088%2060.0544%2017.0447%2059.9844%2017.0006%2059.9161%2016.9496%2059.8498%2016.8911L65.5497%2014.5286%2066.2322%2014.2456%2065.9596%2013.5589%2065.7406%2013.0075C65.2878%2011.8%2063.8507%209.39832%2060.8278%209.39832%2057.8445%209.39832%2055.5034%2011.7619%2055.5034%2015.0676%2055.5034%2018.2151%2057.8256%2020.7369%2061.0659%2020.7369%2063.6702%2020.7369%2065.177%2019.1378%2065.7942%2018.2213L66.2152%2017.5963%2065.5882%2017.1783%2063.9128%2016.0614zM61.3461%2012.8511L59.4108%2013.6526C59.7903%2013.0783%2060.4215%2012.7954%2060.9017%2012.7954%2061.067%2012.7954%2061.2153%2012.8161%2061.3461%2012.8511z%22/%3E%3C/g%3E%3Cpath%20d%3D%22M11.7008%2019.9868C7.48776%2019.9868%203.94818%2016.554%203.94818%2012.341%203.94818%208.12803%207.48776%204.69522%2011.7008%204.69522%2014.0331%204.69522%2015.692%205.60681%2016.9403%206.80583L15.4703%208.27586C14.5751%207.43819%2013.3597%206.78119%2011.7008%206.78119%208.62108%206.78119%206.21482%209.26135%206.21482%2012.341%206.21482%2015.4207%208.62108%2017.9009%2011.7008%2017.9009%2013.6964%2017.9009%2014.8297%2017.0961%2015.5606%2016.3734%2016.1601%2015.7738%2016.5461%2014.9197%2016.6939%2013.7454h-4.9931V11.6512h7.0298C18.8045%2012.0207%2018.8456%2012.4724%2018.8456%2012.957%2018.8456%2014.5255%2018.4186%2016.4637%2017.0389%2017.8434%2015.692%2019.2395%2013.9838%2019.9868%2011.7008%2019.9868zM29.7192%2015.0594C29.7192%2017.8927%2027.5429%2019.9786%2024.8656%2019.9786%2022.1884%2019.9786%2020.0121%2017.8927%2020.0121%2015.0594%2020.0121%2012.2096%2022.1884%2010.1401%2024.8656%2010.1401%2027.5429%2010.1401%2029.7192%2012.2096%2029.7192%2015.0594zM27.5922%2015.0594C27.5922%2013.2855%2026.3274%2012.0782%2024.8656%2012.0782S22.1391%2013.2937%2022.1391%2015.0594C22.1391%2016.8086%2023.4038%2018.0405%2024.8656%2018.0405S27.5922%2016.8168%2027.5922%2015.0594zM40.5922%2015.0594C40.5922%2017.8927%2038.4159%2019.9786%2035.7387%2019.9786%2033.0696%2019.9786%2030.8851%2017.8927%2030.8851%2015.0594%2030.8851%2012.2096%2033.0614%2010.1401%2035.7387%2010.1401%2038.4159%2010.1401%2040.5922%2012.2096%2040.5922%2015.0594zM38.4734%2015.0594C38.4734%2013.2855%2037.2087%2012.0782%2035.7469%2012.0782%2034.2851%2012.0782%2033.0203%2013.2937%2033.0203%2015.0594%2033.0203%2016.8086%2034.2851%2018.0405%2035.7469%2018.0405%2037.2087%2018.0487%2038.4734%2016.8168%2038.4734%2015.0594zM51.203%2010.4357v8.8366C51.203%2022.9105%2049.0595%2024.3969%2046.5219%2024.3969%2044.132%2024.3969%2042.7031%2022.7955%2042.161%2021.4897L44.0417%2020.7095C44.3784%2021.5143%2045.1997%2022.4588%2046.5219%2022.4588%2048.1479%2022.4588%2049.1499%2021.4487%2049.1499%2019.568V18.8617H49.0759C48.5914%2019.4612%2047.6552%2019.9786%2046.4808%2019.9786%2044.0171%2019.9786%2041.7668%2017.8352%2041.7668%2015.0758%2041.7668%2012.3%2044.0253%2010.1319%2046.4808%2010.1319%2047.6552%2010.1319%2048.5914%2010.6575%2049.0759%2011.2323H49.1499V10.4357H51.203zM49.2977%2015.084C49.2977%2013.3512%2048.1397%2012.0782%2046.6697%2012.0782%2045.175%2012.0782%2043.9267%2013.3429%2043.9267%2015.084%2043.9267%2016.8004%2045.175%2018.0487%2046.6697%2018.0487%2048.1397%2018.0487%2049.2977%2016.8004%2049.2977%2015.084zM54.9887%205.22081V19.6912H52.8288V5.22081H54.9887zM63.4968%2016.6854L65.1722%2017.8023C64.6301%2018.6072%2063.3244%2019.9869%2061.0659%2019.9869%2058.2655%2019.9869%2056.2534%2017.827%2056.2534%2015.0676%2056.2534%2012.1439%2058.2901%2010.1483%2060.8278%2010.1483%2063.3818%2010.1483%2064.6301%2012.1768%2065.0408%2013.2773L65.2625%2013.8357%2058.6843%2016.5623C59.1853%2017.5478%2059.9737%2018.0569%2061.0741%2018.0569%2062.1746%2018.0569%2062.9384%2017.5067%2063.4968%2016.6854zM58.3312%2014.9115L62.7331%2013.0884C62.4867%2012.4724%2061.764%2012.0454%2060.9017%2012.0454%2059.8012%2012.0454%2058.2737%2013.0145%2058.3312%2014.9115z%22%20fill%3D%22%23fff%22/%3E%3C/svg%3E" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; user-select: none; border: 0px; padding: 0px; margin: 0px;"></div></a></div></div><div></div><div><div style="display: inline-flex; position: absolute; right: 0px; bottom: 0px;"><div class="gmnoprint" style="z-index: 1000001;"><div draggable="false" class="gm-style-cc" style="user-select: none; position: relative; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><button draggable="false" aria-label="Keyboard shortcuts" title="Keyboard shortcuts" type="button" style="background: none; display: inline-block; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; color: rgb(0, 0, 0); font-family: inherit; line-height: inherit;">Keyboard shortcuts</button></div></div></div><div class="gmnoprint" style="z-index: 1000001;"><div draggable="false" class="gm-style-cc" style="user-select: none; position: relative; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><button draggable="false" aria-label="Map Data" title="Map Data" type="button" style="background: none; border: 0px; margin: 0px; padding: 0px; text-transform: none; appearance: none; position: relative; cursor: pointer; user-select: none; color: rgb(0, 0, 0); font-family: inherit; line-height: inherit; display: none;">Map Data</button><span style="">Map data ©2022 Google, INEGI</span></div></div></div><div class="gmnoscreen"><div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(0, 0, 0); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Map data ©2022 Google, INEGI</div></div><div draggable="false" class="gm-style-cc" style="user-select: none; position: relative; height: 14px; line-height: 14px; display: none;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><span>500 km&nbsp;</span><div style="position: relative; display: inline-block; height: 8px; bottom: -1px; width: 58px;"><div style="width: 100%; height: 4px; position: absolute; left: 0px; top: 0px;"></div><div style="width: 4px; height: 8px; left: 0px; top: 0px; background-color: rgb(255, 255, 255);"></div><div style="width: 4px; height: 8px; position: absolute; background-color: rgb(255, 255, 255); right: 0px; bottom: 0px;"></div><div style="position: absolute; background-color: rgb(102, 102, 102); height: 2px; left: 1px; bottom: 1px; right: 1px;"></div><div style="position: absolute; width: 2px; height: 6px; left: 1px; top: 1px; background-color: rgb(102, 102, 102);"></div><div style="width: 2px; height: 6px; position: absolute; background-color: rgb(102, 102, 102); bottom: 1px; right: 1px;"></div></div></div></div><div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; user-select: none; position: relative; height: 14px; line-height: 14px;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/en-US_US/help/terms_maps.html" target="_blank" rel="noopener" style="text-decoration: none; cursor: pointer; color: rgb(0, 0, 0);">Terms of Use</a></div></div><div draggable="false" class="gm-style-cc" style="user-select: none; position: relative; height: 14px; line-height: 14px; display: none;"><div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;"><div style="width: 1px;"></div><div style="background-color: rgb(245, 245, 245); width: auto; height: 100%; margin-left: 1px;"></div></div><div style="position: relative; padding-right: 6px; padding-left: 6px; box-sizing: border-box; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_blank" rel="noopener" title="Report errors in the road map or imagery to Google" dir="ltr" href="https://www.google.com/maps/@36.90918,-81.9540723,4z/data=!10m1!1e1!12b1?source=apiv3&amp;rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(0, 0, 0); text-decoration: none; position: relative;">Report a map error</a></div></div></div></div></div></div></div>
+</div>
+</div>
+<div class=" col-md-6" style="height: 466.312px;">
+<h4>Drop Me A Line</h4>
+<div class="contact-form">
+<form id="contact-form" method="post" action="https://themes.pixelwars.org/ucard/wp-content/plugins/ucard-shortcodes/send-mail.php">
+<p><label for="name">NAME</label><input type="text" id="name" name="name" class="required"></p>
+<p><label for="email">EMAIL</label><input type="text" id="email" name="email" class="required email"></p>
+<p class="antispam"><label for="url">Leave this empty</label><input type="text" id="url" name="url"></p>
+<p><label for="message">MESSAGE</label><textarea id="message" name="message" class="required"></textarea></p>
+<p><input type="submit" class="submit button primary" value="SEND"></p>
+<p style="padding: 0px; margin: 0px;"><input type="hidden" id="sender_domain" name="sender_domain" value="server@themes.pixelwars.org"></p>
+<p style="padding: 0px; margin: 0px;"><input type="hidden" id="subject" name="subject" value="Contact form message from uCard"></p>
+</form>
+</div>
+</div>
+<div class=" col-md-12" style="height: 185.047px;">
+<div class="fun-fact">
+<p><i class="pe-7s-map-marker"></i></p>
+<h4>based in Houston, USA</h4>
+</div>
+<div class="fun-fact">
+<p><i class="pe-7s-call"></i></p>
+<h4>Tel : +123 456 78900</h4>
+</div>
+<div class="fun-fact">
+<p><i class="pe-7s-mail"></i></p>
+<h4>johndoe [at] gmail.com</h4>
+</div>
+<div class="fun-fact">
+<p><i class="pe-7s-check"></i></p>
+<h4>Freelance Available</h4>
+</div>
+</div>
+</div>
+							</div>
+									</div>
+		</div>
+	</div>
+</div>
+
+									<footer id="colophon" class="site-footer" role="contentinfo">
+							<div class="site-info">
+								<span style="display: none;">Trademark Info</span>			<div class="textwidget"><p>COPYRIGHT © 2021 BY PIXELWARS</p>
+</div>
+									</div>
+						</footer>
+							</main>
+		
+		<div class="cd-folding-panel">
+			<div class="fold-left"></div>
+			<div class="fold-right"></div>
+			<div class="cd-fold-content"><article id="post-40" class="post-40 page type-page status-publish has-post-thumbnail hentry">
+									<header class="entry-header">
+										<h1 class="entry-title">portfolio</h1>									</header>
+									<div class="entry-content">
+																				
+										<ul id="filters" class="filters">
+																									<li class=""><a href="https://themes.pixelwars.org/ucard/#" data-filter="*">all</a></li>
+																											<li class=""><a href="https://themes.pixelwars.org/ucard/#" data-filter=".illustration">illustration</a></li>
+																											<li class=""><a href="https://themes.pixelwars.org/ucard/#" data-filter=".media">Media</a></li>
+																											<li class="current"><a href="https://themes.pixelwars.org/ucard/#" data-filter=".video">Video</a></li>
+																							</ul>
+										
+																							<div class="portfolio-items media-grid masonry" data-layout="masonry" data-item-width="340" style="position: relative; height: 326.016px;">
+																															<div id="post-600" class="media-cell hentry illustration  post-600 portfolio type-portfolio status-publish has-post-thumbnail portfolio-category-illustration" style="position: absolute; left: 0px; top: 0px; width: 50%; display: none;">
+																																							<div class="media-box">
+																						<img width="550" height="408" src="./index_files/theblogger-550x408.jpg" class="attachment-ucard_image_size_2 size-ucard_image_size_2 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/theblogger-550x408.jpg 550w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/theblogger-300x223.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/theblogger-768x570.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/theblogger-1024x760.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/theblogger-1000x742.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/theblogger.jpg 1100w" sizes="(max-width: 550px) 100vw, 550px">																						
+																						<div class="mask"></div>
+																						
+																																																<a class="ajax" href="https://themes.pixelwars.org/ucard/portfolio/impose-project/"></a>
+																																														</div>
+																																						
+																		<div class="media-cell-desc">
+																			<h3>TheBlogger Theme</h3>
+																			
+																																									<p class="category">
+																							an illustration work																						</p>
+																																							</div>
+																	</div>
+																																	<div id="post-598" class="media-cell hentry illustration  post-598 portfolio type-portfolio status-publish has-post-thumbnail portfolio-category-illustration" style="position: absolute; left: 320px; top: 0px; width: 50%; display: none;">
+																																							<div class="media-box">
+																						<img width="550" height="413" src="./index_files/02-2-550x413.jpg" class="attachment-ucard_image_size_2 size-ucard_image_size_2 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/02-2-550x413.jpg 550w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/02-2-300x225.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/02-2-768x576.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/02-2-1024x768.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/02-2-1000x750.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/02-2-1920x1440.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/02-2.jpg 2000w" sizes="(max-width: 550px) 100vw, 550px">																						
+																						<div class="mask"></div>
+																						
+																																																<a class="ajax" href="https://themes.pixelwars.org/ucard/portfolio/on-the-desert/"></a>
+																																														</div>
+																																						
+																		<div class="media-cell-desc">
+																			<h3>ON THE DESERT</h3>
+																			
+																																									<p class="category">
+																							an illustration work																						</p>
+																																							</div>
+																	</div>
+																																	<div id="post-596" class="media-cell hentry video post-596 portfolio type-portfolio status-publish has-post-thumbnail portfolio-category-video" style="position: absolute; left: 0px; top: 0px; width: 50%;">
+																																							<div class="media-box">
+																						<img width="550" height="413" src="./index_files/03-2-550x413.jpg" class="attachment-ucard_image_size_2 size-ucard_image_size_2 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/03-2-550x413.jpg 550w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/03-2-300x225.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/03-2-768x576.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/03-2-1024x768.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/03-2-1000x750.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/03-2-1920x1440.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/03-2.jpg 2000w" sizes="(max-width: 550px) 100vw, 550px">																						
+																						<div class="mask"></div>
+																						
+																																															<a class="lightbox mfp-iframe" href="https://player.vimeo.com/video/97102654" title="SLEEPY GAMES"></a>
+																																													</div>
+																																						
+																		<div class="media-cell-desc">
+																			<h3>SLEEPY GAMES</h3>
+																			
+																																									<p class="category">
+																							lightbox video																						</p>
+																																							</div>
+																	</div>
+																																	<div id="post-594" class="media-cell hentry illustration image post-594 portfolio type-portfolio status-publish has-post-thumbnail portfolio-category-illustration" style="position: absolute; left: 0px; top: 323.469px; width: 50%; display: none;">
+																																							<div class="media-box">
+																						<img width="550" height="413" src="./index_files/04-2-550x413.jpg" class="attachment-ucard_image_size_2 size-ucard_image_size_2 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/04-2-550x413.jpg 550w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/04-2-300x225.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/04-2-768x576.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/04-2-1024x768.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/04-2-1000x750.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/04-2-1920x1440.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/04-2.jpg 2000w" sizes="(max-width: 550px) 100vw, 550px">																						
+																						<div class="mask"></div>
+																						
+																						<a class="lightbox" title="perfect place" href="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/lightbox-01.jpg"></a><a class="lightbox" title="brush art" href="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/lightbox-02.jpg"></a><a class="lightbox" title="getting dirty" href="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/lightbox-03.jpg"></a>
+																					</div>
+																																						
+																		<div class="media-cell-desc">
+																			<h3>WORLD WAR X</h3>
+																			
+																																									<p class="category">
+																							lightbox image																						</p>
+																																							</div>
+																	</div>
+																																	<div id="post-592" class="media-cell hentry media audio post-592 portfolio type-portfolio status-publish has-post-thumbnail portfolio-category-media" style="position: absolute; left: 0px; top: 0px; width: 50%; display: none;">
+																																							<div class="media-box">
+																						<img width="550" height="413" src="./index_files/05-1-550x413.jpg" class="attachment-ucard_image_size_2 size-ucard_image_size_2 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/05-1-550x413.jpg 550w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/05-1-300x225.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/05-1-768x576.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/05-1-1024x768.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/05-1-1000x750.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/05-1-1920x1440.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/05-1.jpg 2000w" sizes="(max-width: 550px) 100vw, 550px">																						
+																						<div class="mask"></div>
+																						
+																																															<a class="lightbox mfp-iframe" href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221650664&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true" title="Empty Battery"></a>
+																																													</div>
+																																						
+																		<div class="media-cell-desc">
+																			<h3>Empty Battery</h3>
+																			
+																																									<p class="category">
+																							lightbox audio																						</p>
+																																							</div>
+																	</div>
+																																	<div id="post-584" class="media-cell hentry media image post-584 portfolio type-portfolio status-publish has-post-thumbnail portfolio-category-media" style="position: absolute; left: 320px; top: 0px; width: 50%; display: none;">
+																																							<div class="media-box">
+																						<img width="550" height="413" src="./index_files/06-1-550x413.jpg" class="attachment-ucard_image_size_2 size-ucard_image_size_2 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/06-1-550x413.jpg 550w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/06-1-300x225.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/06-1-768x576.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/06-1-1024x768.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/06-1-1000x750.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/06-1-1920x1440.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/06-1.jpg 2000w" sizes="(max-width: 550px) 100vw, 550px">																						
+																						<div class="mask"></div>
+																						
+																						<a class="lightbox" title="brush art" href="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/lightbox-02.jpg"></a><a class="lightbox" title="getting dirty" href="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/lightbox-03.jpg"></a><a class="lightbox" title="" href="https://themes.pixelwars.org/ucard/"></a>
+																					</div>
+																																						
+																		<div class="media-cell-desc">
+																			<h3>WIZARD ADVENTURE</h3>
+																			
+																																									<p class="category">
+																							lightbox gallery																						</p>
+																																							</div>
+																	</div>
+																																	<div id="post-582" class="media-cell hentry illustration url post-582 portfolio type-portfolio status-publish has-post-thumbnail portfolio-category-illustration" style="position: absolute; left: 320px; top: 326.016px; width: 50%; display: none;">
+																																							<div class="media-box">
+																						<img width="550" height="413" src="./index_files/07-1-550x413.jpg" class="attachment-ucard_image_size_2 size-ucard_image_size_2 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/07-1-550x413.jpg 550w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/07-1-300x225.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/07-1-768x576.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/07-1-1024x768.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/07-1-1000x750.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/07-1-1920x1440.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/07-1.jpg 2000w" sizes="(max-width: 550px) 100vw, 550px">																						
+																						<div class="mask"></div>
+																						
+																																															<a target="_blank" href="http://themeforest.net/user/pixelwars"></a>
+																																													</div>
+																																						
+																		<div class="media-cell-desc">
+																			<h3>SHINNY ROBOT</h3>
+																			
+																																									<p class="category">
+																							an illustration work
+																						</p>
+																																							</div>
+																	</div>
+																																	<div id="post-577" class="media-cell hentry illustration  post-577 portfolio type-portfolio status-publish has-post-thumbnail portfolio-category-illustration" style="position: absolute; left: 0px; top: 649.485px; width: 50%; display: none;">
+																																							<div class="media-box">
+																						<img width="550" height="413" src="./index_files/08-1-550x413.jpg" class="attachment-ucard_image_size_2 size-ucard_image_size_2 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/08-1-550x413.jpg 550w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/08-1-300x225.jpg 300w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/08-1-768x576.jpg 768w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/08-1-1024x768.jpg 1024w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/08-1-1000x750.jpg 1000w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/08-1-1920x1440.jpg 1920w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/08-1.jpg 2000w" sizes="(max-width: 550px) 100vw, 550px">																						
+																						<div class="mask"></div>
+																						
+																																																<a class="ajax" href="https://themes.pixelwars.org/ucard/portfolio/virus-protection/"></a>
+																																														</div>
+																																						
+																		<div class="media-cell-desc">
+																			<h3>VIRUS PROTECTION</h3>
+																			
+																																									<p class="category">
+																							an illustration work																						</p>
+																																							</div>
+																	</div>
+																																	<div id="post-573" class="media-cell hentry media  post-573 portfolio type-portfolio status-publish has-post-thumbnail portfolio-category-media" style="position: absolute; left: 0px; top: 326.016px; width: 50%; display: none;">
+																																							<div class="media-box">
+																						<img width="500" height="375" src="./index_files/09.jpg" class="attachment-ucard_image_size_2 size-ucard_image_size_2 wp-post-image" alt="" loading="lazy" srcset="https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/09.jpg 500w, https://themes.pixelwars.org/ucard/wp-content/uploads/2016/06/09-300x225.jpg 300w" sizes="(max-width: 500px) 100vw, 500px">																						
+																						<div class="mask"></div>
+																						
+																																																<a class="ajax" href="https://themes.pixelwars.org/ucard/portfolio/red-diamond/"></a>
+																																														</div>
+																																						
+																		<div class="media-cell-desc">
+																			<h3>RED DIAMOND</h3>
+																			
+																																									<p class="category">
+																							an illustration work																						</p>
+																																							</div>
+																	</div>
+																													</div>
+																					</div>
+								</article></div>
+			<a class="cd-close" href="https://themes.pixelwars.org/ucard/#"></a>
+		</div>
+		
+        <!-- ALERT: used for contact form mail delivery alert -->
+        <div class="site-alert animated"></div>
+	</div>
+	
+	<!-- PORTFOLIO SINGLE AJAX CONTENT CONTAINER -->
+	<div class="p-overlay"></div>
+	<div class="p-overlay"></div>
+	
+	<script type="text/javascript" id="tptn_tracker-js-extra">
+/* <![CDATA[ */
+var ajax_tptn_tracker = {"ajax_url":"https:\/\/themes.pixelwars.org\/ucard\/wp-admin\/admin-ajax.php","top_ten_id":"185","top_ten_blog_id":"1","activate_counter":"11","top_ten_debug":"0","tptn_rnd":"102387309"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./index_files/top-10-tracker.min.js.download" id="tptn_tracker-js"></script>
+<script type="text/javascript" src="./index_files/jquery.address.js.download" id="address-js"></script>
+<script type="text/javascript" src="./index_files/nprogress.js.download" id="nprogress-js"></script>
+<script type="text/javascript" src="./index_files/fastclick.js.download" id="fastclick-js"></script>
+<script type="text/javascript" src="./index_files/typist.js.download" id="typist-js"></script>
+<script type="text/javascript" src="./index_files/imagesloaded.min.js.download" id="imagesloaded-js"></script>
+<script type="text/javascript" src="./index_files/jquery.isotope.min.js.download" id="isotope-js"></script>
+<script type="text/javascript" src="./index_files/jquery.fitvids.js.download" id="fitvids-js"></script>
+<script type="text/javascript" src="./index_files/jquery.validate.min.js.download" id="jqueryvalidation-js"></script>
+<script type="text/javascript" id="jqueryvalidation-js-after">
+(function($) { "use strict";
+$.extend($.validator.messages, {
+required: "This field is required.",
+remote: "Please fix this field.",
+email: "Please enter a valid email address.",
+url: "Please enter a valid URL.",
+date: "Please enter a valid date.",
+dateISO: "Please enter a valid date ( ISO ).",
+number: "Please enter a valid number.",
+digits: "Please enter only digits.",
+equalTo: "Please enter the same value again.",
+maxlength: $.validator.format("Please enter no more than {0} characters."),
+minlength: $.validator.format("Please enter at least {0} characters."),
+rangelength: $.validator.format("Please enter a value between {0} and {1} characters long."),
+range: $.validator.format("Please enter a value between {0} and {1}."),
+max: $.validator.format("Please enter a value less than or equal to {0}."),
+min: $.validator.format("Please enter a value greater than or equal to {0}."),
+step: $.validator.format("Please enter a multiple of {0}.")
+});
+})(jQuery);
+</script>
+<script type="text/javascript" src="./index_files/jquery.magnific-popup.min.js.download" id="magnific-popup-js"></script>
+<script type="text/javascript" src="./index_files/main.js.download" id="ucard-main-js"></script>
+<script type="text/javascript" src="./index_files/wp-fix.js.download" id="ucard-wp-fix-js"></script>
+<script type="text/javascript" src="./index_files/wp-embed.min.js.download" id="wp-embed-js"></script>
+
+<div id="shimai-world" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 2147483647; pointer-events: none; background: transparent;"></div></body><screen-shader style="display: block; transition: none 0s ease 0s; margin: 0px; padding: 0px; border-radius: 0px; border: none; outline: none; visibility: visible; max-height: none; max-width: none; clip: unset; overflow: visible; opacity: 1;"><!--This is an element that contains all the html for the screen shader extension to work--><div style="display: block; transition: none 0s ease 0s; margin: 0px; padding: 0px; border-radius: 0px; border: none; outline: none; visibility: visible; max-height: none; max-width: none; clip: unset; overflow: visible; opacity: 0; position: fixed; inset: -10%; width: auto; height: auto; z-index: 2147483646; background: black;"></div><div style="display: block; transition: none 0s ease 0s; margin: 0px; padding: 0px; border-radius: 0px; border: none; outline: none; visibility: visible; max-height: none; max-width: none; clip: unset; overflow: visible; opacity: 1; position: fixed; inset: -10%; width: auto; height: auto; z-index: 2147483645; background: rgba(255, 147, 41, 0.294); mix-blend-mode: multiply;"></div><style>screen-shader{pointer-events: none !important;z-index: auto !important;}html > body{z-index: 0 !important;position: relative !important;}</style><style>
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar {
+                                        background: rgb(241, 211, 182) !important;
+                                        width: 17px !important;
+                                        height: 17px !important;
+                                        -webkit-appearance: unset !important;
+                                    }
+
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-track {
+                                        background: transparent !important;
+                                    }
+
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-corner{
+                                        background: rgb(210, 184, 158) !important;
+                                        box-shadow: none !important;
+                                        border-radius: unset !important;
+                                    }
+
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-thumb{
+                                        background: rgb(193, 169, 145) !important;
+                                        border: 2px solid rgb(241, 211, 182) !important;
+                                        box-shadow: none !important;
+                                        border-radius: unset !important;
+                                    }
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-thumb:vertical{
+                                        border-bottom-width: 0 !important;
+                                        border-top-width: 0 !important;
+                                    }
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-thumb:horizontal{
+                                        border-left-width: 0 !important;
+                                        border-right-width: 0 !important;
+                                    }
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-thumb:hover {
+                                        background: rgb(168, 147, 127) !important;
+                                    }
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-thumb:active {
+                                        background: rgb(120, 105, 90) !important;
+                                    }
+
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-button{
+                                        background-color: rgb(241, 211, 182) !important;
+                                        background-repeat: no-repeat !important;
+                                        background-position: center !important;
+                                        box-shadow: none !important;
+                                        border-radius: unset !important;
+                                    }
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-button:active{
+                                        background-color: rgb(120, 105, 90) !important; /* also arrow image should be white */
+                                    }
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-button:hover{
+                                        background-color: rgb(210, 184, 158) !important;
+                                    }
+
+
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-button:vertical:decrement {
+                                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAAXNSR0IArs4c6QAAAFRJREFUGFdjZICCZT0NIkzs//f/+8noGFXS8AYkzAiTXDm5fvd/BgYXRgaGPeG5ja5wyZWT6xf/Z2CIgSlkZGBYEp7bGMu4cnJ9938GhhKYBJKCHgAq9hhLcocKXQAAAABJRU5ErkJggg==) !important;
+                                    }
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-button:vertical:increment {
+                                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAAXNSR0IArs4c6QAAAFVJREFUGFdjXDm5vvs/A0MJAxpgZGDoYQSJrZxcv/g/A0MMTJ6RgWFJeG5jLFgSqmD3fwYGF0YGhj3huY2uIDG45LKeBhEm9v/7//1kdIwqaXgDkgQA5qIYSxok8LsAAAAASUVORK5CYII=) !important;
+                                    }
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-button:horizontal:decrement {
+                                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAAXNSR0IArs4c6QAAADxJREFUGFdjZEACKyfXdzPC+Csn1y/+z8AQw7isp0GEmf3/8v8MDC4gScYVk+svMzAw6MBUYqrAMAPdFgCU1xgxLf/7ZAAAAABJRU5ErkJggg==) !important;
+                                    }
+                                    :root.ss-shaded-scrollbars::-webkit-scrollbar-button:horizontal:increment {
+                                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAHCAYAAAAvZezQAAAAAXNSR0IArs4c6QAAADpJREFUGFdjXDm5vjs8t7GUAQoYV0yu/8/IwLAkPLcxFiQGFgAzGBj2/P3JGAkXgOq4gl0FihnotgAA+1UhIQmCIjAAAAAASUVORK5CYII=) !important;
+                                    }
+                                </style>
+<!-- saved from url=(0035)https://themes.pixelwars.org/ucard/ -->
+<html class="" style="display: block; transition: none 0s ease 0s; margin-top: 0px; margin-bottom: 0px; margin-left: 0px; padding: 0px; border-radius: 0px; border: none; outline: none; visibility: visible; max-height: none; max-width: none; clip: unset; opacity: 1; position: fixed; inset: -10%; width: auto; height: auto; z-index: -2147483647;"></html><div style="display: block; transition: none 0s ease 0s; margin: 0px; padding: 0px; border-radius: 0px; border: none; outline: none; visibility: visible; max-height: none; max-width: none; clip: unset; overflow: visible; opacity: 1; position: fixed; inset: -10%; width: auto; height: auto; z-index: -2147483646; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(34, 34, 34);"></div></screen-shader></html>
